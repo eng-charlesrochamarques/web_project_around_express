@@ -1,30 +1,24 @@
-# 🌎 Around The U.S. — Backend
+# Around The U.S. - Backend
 
-## 📌 Overview
+## Overview
 
-Backend API built with **Node.js** and **Express** for the _Around The U.S._ project.
-This version uses **local JSON files** as a temporary data source.
+Backend API built with Node.js and Express for the Around The U.S. project.
+This version uses local JSON files as a temporary data source.
 
----
-
-## 🚀 Features
+## Features
 
 - Get all users
 - Get user by ID
 - Get all cards
 - 404 error handling
 
----
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - Node.js
 - Express
 - ESLint (Airbnb)
 
----
-
-## ▶️ Run the Project
+## Run the Project
 
 ```bash
 npm install
@@ -33,13 +27,11 @@ npm run start
 
 Server runs on:
 
-```
+```text
 http://localhost:3000
 ```
 
----
-
-## 📡 Endpoints
+## Endpoints
 
 ```http
 GET /users
@@ -47,26 +39,20 @@ GET /users/:id
 GET /cards
 ```
 
----
+## Structure
 
-## 📂 Structure
-
-```
-routes/   → API routes
-data/     → JSON data
-app.js    → entry point
+```text
+routes/   - API routes
+data/     - JSON data
+app.js    - entry point
 ```
 
----
-
-## 🧪 Lint
+## Lint
 
 ```bash
 npm run lint
 ```
 
----
-
-## 👨‍💻 Author
+## Author
 
 Charles Rocha Marques
