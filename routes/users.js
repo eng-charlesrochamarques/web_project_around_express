@@ -1,41 +1,17 @@
-const router = require('express').Router();
-const fs = require('fs');
-const path = require('path');
+const router = require("express").Router();
 
-const usersPath = path.join(__dirname, '../data/users.json');
+const {
+  getUsers,
+  getUserById,
+  createUser,
+  updateProfile,
+  updateAvatar,
+} = require("../controllers/users");
 
-router.get('/', (req, res) => {
-  fs.readFile(usersPath, 'utf8', (err, data) => {
-    if (err) {
-      res.status(500).send({ message: 'Erro ao ler os usuários' });
-      return;
-    }
-
-    res.send(JSON.parse(data));
-  });
-});
-
-router.get('/:id', (req, res) => {
-  const { id } = req.params;
-
-  fs.readFile(usersPath, 'utf8', (err, data) => {
-    if (err) {
-      res.status(500).send({ message: 'Erro ao ler os usuários' });
-      return;
-    }
-
-    const users = JSON.parse(data);
-    const user = users.find((item) => item._id === id);
-
-    if (!user) {
-      res.status(404).send({
-        message: 'ID do usuário não encontrado',
-      });
-      return;
-    }
-
-    res.send(user);
-  });
-});
+router.get("/", getUsers);
+router.get("/:userId", getUserById);
+router.post("/", createUser);
+router.patch("/me", updateProfile);
+router.patch("/me/avatar", updateAvatar);
 
 module.exports = router;
